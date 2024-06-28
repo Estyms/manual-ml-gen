@@ -1,6 +1,6 @@
-name: MelonLoader Toolchain
+name: ApiLess MelonLoader Toolchain
 description: MelonLoader's toolchain, but as a GitHub Action. Useful for CI builds of MelonLoader mods.
-author: tetra-fox
+author: Estyms, tetra-fox
 
 inputs:
   game:
