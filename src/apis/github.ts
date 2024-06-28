@@ -45,7 +45,7 @@ export default class GitHub {
         name: assetName,
         tagName: tag,
         latest: tag === "latest"
-      });
+      }) as {repository: any};
 
       core.info(`Got release info for ${repo[0]}/${repo[1]}@${tag}`);
 

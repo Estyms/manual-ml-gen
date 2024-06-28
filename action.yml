@@ -15,6 +15,18 @@ inputs:
   unity_version:
     description: Override Unity version (If it was not automatically found)
     required: false
+  il2cpp_version:
+    description: Il2Cpp Version of the game
+    required: false
+  mapping_url:
+    description: Url of the game assembly mapping
+    required: false
+  unhollower_version:
+    description: Unhollower version
+    required: false
+  obfuscation_regex:
+    description: File obfuscation regex
+    required: false
   work_path:
     description: Where tools will be downloaded
     default: ${{ github.workspace }}/ml-gen

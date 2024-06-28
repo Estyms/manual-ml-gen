@@ -17,6 +17,10 @@ export default class Inputs {
     .getInput("game_executable", {required: true, trimWhitespace: true})
     .replace(/\.exe|\.app$/, ""); // Remove extension
   static unityVersion = core.getInput("unity_version");
+  static forceCpp2IlVersion = core.getInput("il2cpp_version");
+  static mappingUrl = core.getInput("mapping_url");
+  static forceUnhollowerVersion = core.getInput("unhollower_version");
+  static obfuscationRegex = core.getInput("obfuscation_regex");
   static readonly tmpPath = path.normalize(core.getInput("work_path"));
   static readonly outPath = path.normalize(
     core.getInput("output_path") ||
