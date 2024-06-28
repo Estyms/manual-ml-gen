@@ -55,7 +55,7 @@ async function run(): Promise<void> {
 
     await GitHub.downloadReleaseAsset(
       ["SamboyCoding", "Cpp2IL"],
-      inputs.forceCpp2IlVersion!,
+      inputs.forceCpp2IlVersion,
       cpp2IlAssetName
     );
 
@@ -106,7 +106,7 @@ async function run(): Promise<void> {
     const hasMap = !!inputs.mappingUrl;
     if (hasMap) {
       core.startGroup("Download deobfuscation map");
-      await cmd.wget(inputs.mappingUrl!, asmGenRoot);
+      await cmd.wget(inputs.mappingUrl, asmGenRoot);
       core.endGroup();
     }
     // #endregion
@@ -174,7 +174,7 @@ async function run(): Promise<void> {
       unhollowerArgs.push(
         `--rename-map=${path.join(
           asmGenRoot,
-          inputs.mappingUrl!.split("/").pop()!
+          inputs.mappingUrl.split("/").pop()!
         )}`
       );
 

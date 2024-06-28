@@ -39,13 +39,16 @@ export default class GitHub {
     }`;
 
     try {
-      const {repository} = await this.octokit.graphql(query, {
-        owner: repo[0],
-        repo: repo[1],
-        name: assetName,
-        tagName: tag,
-        latest: tag === "latest"
-      }) as {repository: any};
+      /* eslint-disable @typescript-eslint/no-explicit-any */
+      const repository = (
+        (await this.octokit.graphql(query, {
+          owner: repo[0],
+          repo: repo[1],
+          name: assetName,
+          tagName: tag,
+          latest: tag === "latest"
+        })) as any
+      ).repository;
 
       core.info(`Got release info for ${repo[0]}/${repo[1]}@${tag}`);
 
